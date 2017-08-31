@@ -6,8 +6,9 @@ The script uses the WordPress API to actually post your iWeb content directly to
 To run:
 1. You'll need an access token for your WordPress.com site, see https://developer.wordpress.com/docs/oauth2/. It's pretty annoying to set up just to run a script, but you can make a new dummy app that just points to any random website and then cut-n-paste the magic strings and use cURL to get your token.
 2. Create your WordPress.com site. It should import fine to an existing site but I'd suggest making a new test site and importing there first, because if anything goes wrong you can end up with a ton of junk media and posts to clean out if you need to reimport. In the commands below, `<wordpress_blog>` is the "x" in x.wordpress.com.
-3. (Recommended) Trial-run the script on a single post. Find a representative post in your `<iweb>/.../Entries/<year>/<month>` folders. Pick the post's base HTML file and run `iwebparseandpost.py <post_html> <auth_token> <wordpress_blog>` on it.
-4. Run the script on the entire blog:
+3. You'll need the HTML output of iWeb. I don't think I could put my hands on an actual iWeb binary anymore, and this importer doesn't work on those, it works on the generated HTML.
+4. (Recommended) Trial-run the script on a single post. Find a representative post in your `<iweb>/.../Entries/<year>/<month>` folders. Pick the post's base HTML file and run `iwebparseandpost.py <post_html> <auth_token> <wordpress_blog>` on it.
+5. Run the script on the entire blog:
 `iwebtowordpress.py <iweb_root> <auth_token> <wordpress_blog>`
 
 Missing features:
